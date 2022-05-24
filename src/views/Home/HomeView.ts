@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import {defineComponent} from 'vue';
 
 // Components
 import RadarChart from '@/components/RadarChart';
@@ -17,6 +17,10 @@ export default defineComponent({
             s: [],
             c: [],
             showResult: false,
+            rules: [
+                (v: number) => (v && v >= 1) || "Waarde moet 1 of hoger zijn",
+                (v: number) => (v && v <= 4) || "Waarde mag niet hoger dan 4 zijn",
+            ],
         };
     },
 
